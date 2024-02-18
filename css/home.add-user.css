@@ -50,6 +50,7 @@ form>.first-type {
 
 .first-type>input[type="date"] {
     padding: 4px 10px;
+    width: 100% !important;
 }
 
 .second-type>select {
