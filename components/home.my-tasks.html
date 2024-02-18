@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../img/favicon-32x32.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/loader.css">
+    <link rel="stylesheet" href="../css/home.my-tasks.css">
+    <link rel="stylesheet" href="../css/popup-toasters.css">
+    <title>CRUDify - My Tasks</title>
+</head>
+
+<body>
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="img-links">
+                <img src="../img/logo.png" alt="logo" width="200" height="auto">
+                <nav class="topnav">
+                    <a href="./home.all-user.html">All User</a>
+                    <a href="./home.add-user.html">Add User</a>
+                    <a href="./home.my-tasks.html">My Tasks</a>
+                </nav>
+            </div>
+            <div class="user-data"></div>
+        </div>
+    </header>
+
+    <div id="toggle-section"></div>
+
+    <!-- Include the loader -->
+    <div id="loaderContainer"></div>
+
+    <section id="task-section" class="container">
+        <div class="label">
+            <span>My Todos</span>
+            <i class="fa-solid fa-clipboard-list"></i>
+        </div>
+        <form>
+            <input type="text" class='todo-inputs' placeholder='Enter here...'>
+            <button class='todo-button'>
+                <i class='fas fa-plus-square'></i>
+            </button>
+        </form>
+        <div class="todo-container">
+            <ul class="todo-list"></ul>
+        </div>
+    </section>
+
+    <footer class="dashboard-footer">
+        <div class="container">
+            <p>All Rights Reserved &copy; 2024 CRUDify.am</p>
+        </div>
+    </footer>
+
+    <!-- Toast container -->
+    <div id="toast" class="toast hide"></div>
+
+    <script src="https://kit.fontawesome.com/b43da9d28e.js" crossorigin="anonymous"></script>
+    <script src="../js/home.js"></script>
+    <script src="../js/loader.js"></script>
+    <script src="../js/home.my-tasks.js"></script>
+</body>
+
+</html>

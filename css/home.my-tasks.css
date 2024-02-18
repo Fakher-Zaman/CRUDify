@@ -1,0 +1,126 @@
+body {
+    background-color: var(--task-section-bg);
+}
+
+/* My Task Section */
+#task-section {
+    padding: 1rem 0;
+    min-height: 100vh;
+}
+
+div.label {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--secondary-color-1);
+}
+
+#task-section span {
+    font-size: 2rem;
+    font-family: Roboto-Bold;
+}
+
+#task-section i {
+    font-size: 2.5rem;
+}
+
+/* For Task Form  */
+form {
+    min-height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form input,
+form button {
+    padding: 14.5px;
+    border: none;
+    background: var(--white);
+    font-size: 1.2rem;
+}
+
+form button {
+    padding: 5.5px;
+    margin-left: 2px;
+}
+
+form button {
+    width: 5rem;
+    color: var(--primary-color-1);
+    background: var(--white);
+    cursor: pointer;
+    transition: var(--transition-1);
+    border: none;
+}
+
+form button:hover {
+    color: var(--white);
+    background: var(--primary-color-1);
+}
+
+.todo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.todo-list {
+    min-width: 300px;
+    list-style: none;
+}
+
+.todo {
+    background: var(--white);
+    color: var(--black);
+    margin: 0.6rem;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    align-items: center;
+    transition: var(--transition-1);
+}
+
+.todo li {
+    flex: 1
+}
+
+.trash-btn,
+.complete-btn {
+    color: var(--white);
+    cursor: pointer;
+    border: none;
+    width: 50px;
+    text-align: center;
+    padding-right: 7px;
+}
+
+.complete-btn {
+    background: var(--primary-color-1);
+}
+
+.trash-btn {
+    background: var(--delete-task);
+}
+
+.fa-check,
+.fa-trash {
+    pointer-events: none;
+}
+
+.todo-item {
+    padding: 0rem 0.5rem;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.fall {
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+}

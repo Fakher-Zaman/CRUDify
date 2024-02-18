@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+:root {
+    /* for width */
+    --max-width: 1400px;
+    --fixed-width: 500px;
+    --fluid-width: 95%;
+
+    /* for color */
+    --primary-color: #141c3a;
+
+    --primary-color-1: #3498db;
+    --primary-color-2: #4d8ec7;
+    --primary-color-3: #6694b3;
+    --primary-color-4: #7f8aa0;
+    --primary-color-5: #988087;
+
+    --secondary-color-1: #34495e;
+    --secondary-color-2: #4d5e72;
+    --secondary-color-3: #667187;
+    --secondary-color-4: #7f857c;
+    --secondary-color-5: #989c91;
+
+    --white: #ffffff;
+    --black: #000000;
+    --red-dark: #842029;
+    --delete-task: #be5437;
+
+    --input-border-color: #ccc;
+    --btn-hover-1: #2fa9fb;
+    --link-hover-2: #edf3f7;
+    --modal-border-color: #888;
+    --modal-close-color: #aaaaaa;
+    --search-border-color: rgba(169, 221, 247, 0.4);
+    --search-icon-color: #707070;
+
+    /* for background */
+    --background-image: linear-gradient(to right top, #3498db, #3983ba, #3a6f9a, #385c7b, #34495e);
+    --text-bg: #a4d8fa;
+    --modal-background: rgba(0, 0, 0, 0.4);
+    --modal-content-background: #fefefe;
+    --task-section-bg: #a4d8fa;
+
+    --toast-danger-bg: #c0392b;
+    --toast-information-bg: #2980b9;
+    --toast-warning-bg: #f39c12;
+    --toast-success-bg: #27ae60;
+
+    /* box shadows */
+    --box-shadow-1: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    --box-shadow-2: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    --box-shadow-3: 0 0 0 4px rgba(52, 152, 219, 0.2);
+
+    /* transitions */
+    --transition-1: .3s all ease-in-out;
+    --transition-2: left 0.3s ease;
+    --transition-3: top 0.3s ease-in-out;
+    --toast-transition: opacity 0.5s ease;
+
+    /* animations */
+    --logout-spinner: spin 2s linear infinite;
+    --data-loader-1: data-loader-1 0.6s infinite;
+    --data-loader-2: data-loader-2 0.6s infinite;
+    --data-loader-3: data-loader-3 0.6s infinite;
+
+    /* Body Scroller */
+    --webkit-box-shadow-1: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    --webkit-bg: -webkit-linear-gradient(45deg,
+            rgba(255, 255, 255, .2) 25%,
+            transparent 25%,
+            transparent 50%,
+            rgba(255, 255, 255, .2) 50%,
+            rgba(255, 255, 255, .2) 75%,
+            transparent 75%,
+            transparent);
+}
+
+@font-face {
+    font-family: Roboto-Black;
+    src: url('../fonts/Roboto-Black.ttf');
+}
+
+@font-face {
+    font-family: Roboto-BlackItalic;
+    src: url('../fonts/Roboto-BlackItalic.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Bold;
+    src: url('../fonts/Roboto-Bold.ttf');
+}
+
+@font-face {
+    font-family: Roboto-BoldItalic;
+    src: url('../fonts/Roboto-BoldItalic.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Italic;
+    src: url('../fonts/Roboto-Italic.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Light;
+    src: url('../fonts/Roboto-Light.ttf');
+}
+
+@font-face {
+    font-family: Roboto-LightItalic;
+    src: url('../fonts/Roboto-LightItalic.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Medium;
+    src: url('../fonts/Roboto-Medium.ttf');
+}
+
+@font-face {
+    font-family: Roboto-MediumItalic;
+    src: url('../fonts/Roboto-MediumItalic.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url('../fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: Roboto-Thin;
+    src: url('../fonts/Roboto-Thin.ttf');
+}
+
+@font-face {
+    font-family: Roboto-ThinItalic;
+    src: url('../fonts/Roboto-ThinItalic.ttf');
+}
+
+body {
+    font-family: Roboto-Regular;
+    font-size: 1em;
+    line-height: 1.5;
+    color: var(--primary-color);
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: var(--webkit-box-shadow-1);
+    background-color: var(--white);
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+    background-color: var(--white);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color-1);
+    background-image: var(--webkit-bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Roboto-Bold;
+}
+
+.container {
+    width: var(--fluid-width);
+    margin: 0 auto;
+}
+
+/* Responsiveness */
+@media screen and (min-width: 1408px) {
+    .container {
+        max-width: var(--max-width);
+    }
+}

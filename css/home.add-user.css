@@ -1,0 +1,92 @@
+/* Add User Section */
+#add-section {
+    padding: 1rem 0;
+    min-height: 100vh;
+}
+
+div.label {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--secondary-color-1);
+}
+
+.label>span {
+    font-size: 2rem;
+    font-family: Roboto-Bold;
+}
+
+.label>i {
+    margin-left: 10px;
+    font-size: 2rem;
+}
+
+/* Add User Form */
+form {
+    margin: 2rem;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    background-color: var(--secondary-color-1);
+    color: var(--white);
+}
+
+form>.first-type {
+    display: flex;
+    flex-direction: column;
+}
+
+.first-type>label {
+    margin-bottom: 5px;
+}
+
+.first-type>input {
+    padding: 5px 10px;
+    border: 2px solid var(--white);
+    border-radius: 2px;
+}
+
+.first-type>input[type="date"] {
+    padding: 4px 10px;
+}
+
+.second-type>select {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    padding: 4px 10px;
+    border: 2px solid var(--white);
+    border-radius: 2px;
+}
+
+.third-type button {
+    background: transparent;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--white);
+    color: var(--white);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: var(--transition-1);
+}
+
+.third-type button:hover {
+    background-color: var(--primary-color-1);
+    border: 2px solid var(--primary-color-1);
+}
+
+/* Responsiveness */
+@media screen and (max-width: 774px) {
+    form {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    form {
+        margin: 1rem;
+        padding: 1rem;
+        grid-template-columns: 1fr;
+    }
+}

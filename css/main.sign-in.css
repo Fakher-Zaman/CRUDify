@@ -1,0 +1,104 @@
+body {
+    background: var(--background-image) no-repeat center center/ cover;
+    height: 100vh;
+}
+
+.signin-logo {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.sign-in {
+    width: 450px;
+    box-shadow: var(--box-shadow-1);
+    background-color: var(--white);
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sign-in>img {
+    background-color: var(--primary-color-1);
+    border-radius: 50%;
+    width: 150px;
+    height: auto;
+    padding: 1.2rem;
+    border: 2px solid var(--white);
+
+    position: relative;
+    top: -105px;
+    margin-bottom: -110px;
+}
+
+.sign-in h2 {
+    margin-top: 10px;
+    font-family: Roboto-Light;
+}
+
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid var(--input-border-color);
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    width: 100%;
+    background: transparent;
+    background-color: var(--primary-color-1);
+    border: none;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--white);
+    border-radius: 5px;
+    transition: var(--transition-1);
+    cursor: pointer;
+}
+
+button:link {
+    background-color: var(--primary-color-1);
+}
+
+button:visited {
+    background-color: var(--primary-color-1);
+}
+
+button:hover {
+    background-color: var(--secondary-color-2);
+}
+
+button:active {
+    background-color: var(--secondary-color-2);
+}
+
+/* Responsiveness */
+@media screen and (max-width: 774px) {
+    .sign-in {
+        width: 70%;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .sign-in {
+        width: 90%;
+        margin: 0;
+    }
+}

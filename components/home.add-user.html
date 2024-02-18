@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../img/favicon-32x32.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/loader.css">
+    <link rel="stylesheet" href="../css/home.add-user.css">
+    <link rel="stylesheet" href="../css/home.all-user.css">
+    <link rel="stylesheet" href="../css/popup-toasters.css">
+    <title>CRUDify - Add User</title>
+</head>
+
+<body>
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="img-links">
+                <img src="../img/logo.png" alt="logo" width="200" height="auto">
+                <nav class="topnav">
+                    <a href="./home.all-user.html">All User</a>
+                    <a href="./home.add-user.html">Add User</a>
+                    <a href="./home.my-tasks.html">My Tasks</a>
+                </nav>
+            </div>
+            <div class="user-data"></div>
+        </div>
+    </header>
+
+    <div id="toggle-section"></div>
+
+    <!-- Include the loader -->
+    <div id="loaderContainer"></div>
+
+    <section id="add-section" class="container">
+        <div class="label">
+            <span>Add User</span>
+            <i class="fa-solid fa-user-plus"></i>
+        </div>
+        <form onsubmit="addUser(event)">
+            <div class="first-type">
+                <label for="image">Image URL:</label>
+                <input type="url" id="image" name="image" placeholder="e.g. https://robohash.org/Maurine.png"
+                    value="https://robohash.org/Trace.png?set=set4" required>
+            </div>
+            <div class="first-type">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" placeholder="e.g. Fakher" required>
+            </div>
+            <div class="first-type">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" placeholder="e.g. Zaman" required>
+            </div>
+            <div class="first-type">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="e.g. +92 316 0441719" required>
+            </div>
+            <div class="first-type">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="e.g. fakherzamanofficial@gmail.com" required>
+            </div>
+            <div class="first-type">
+                <label for="address">Address:</label>
+                <input type="address" id="address" name="address" placeholder="e.g. Shahdara 4th Street G.T Road"
+                    required>
+            </div>
+            <div class="first-type">
+                <label for="birthDate">Date Of Birth:</label>
+                <input type="date" id="birthDate" name="birthDate" required>
+            </div>
+            <div class="first-type">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="0" max="150" placeholder="e.g. 23" required>
+            </div>
+            <div class="second-type">
+                <label for="gender">Gender:</label>
+                <select name="cars" id="gender" aria-placeholder="Male" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <p class="third-type" id="add-user-btn">
+                <button type="submit">Add User</button>
+            </p>
+        </form>
+
+        <p id="user-count"></p>
+        <div id="display-users"></div>
+    </section>
+
+    <footer class="dashboard-footer">
+        <div class="container">
+            <p>All Rights Reserved &copy; 2024 CRUDify.am</p>
+        </div>
+    </footer>
+
+    <!-- Toast container -->
+    <div id="toast" class="toast hide"></div>
+
+    <script src="https://kit.fontawesome.com/b43da9d28e.js" crossorigin="anonymous"></script>
+    <script src="../js/home.js"></script>
+    <script src="../js/loader.js"></script>
+    <script src="../js/home.add-user.js"></script>
+</body>
+
+</html>
