@@ -63,4 +63,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-For any questions, feedback, or support, please contact [Your Name](mailto:fakherzamanofficial@gmail.com). You can also visit the [project repository](https://github.com/Fakher-Zaman/CRUDify.git) for more information.
+For any questions, feedback, or support, please contact [Fakher Zaman](mailto:fakherzamanofficial@gmail.com). You can also visit the [project repository](https://github.com/Fakher-Zaman/CRUDify.git) for more information.

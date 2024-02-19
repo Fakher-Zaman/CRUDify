@@ -36,3 +36,9 @@
     background-color: var(--toast-success-bg);
     color: var(--white);
 }
+
+@media screen and (max-width: 600px) {
+    .toast {
+        width: 95%;
+    }
+}
