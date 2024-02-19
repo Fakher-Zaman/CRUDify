@@ -26,6 +26,32 @@ function hideLoader() {
     document.getElementById('all-user-section').style.display = 'block';
 }
 
+// Attach event listener to input field for 'input' event
+searchInput.addEventListener('input', function () {
+    performSearch();
+});
+
+// Function to perform search operation
+function performSearch() {
+    const searchTerm = searchInput.value.trim();
+    // Check if search term is not empty
+    if (searchTerm !== '') {
+        fetch(`https://dummyjson.com/users/search?q=${searchTerm}`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.users.length > 0) {
+                    displaySearchResults(data);
+                } else {
+                    searchLocally(searchTerm);
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching search results:', error);
+                showToast('danger', 'Failed to fetch search results.');
+            });
+    }
+}
+
 searchButton.addEventListener('click', function () {
     const searchTerm = searchInput.value.trim();
     // console.log(searchTerm);
