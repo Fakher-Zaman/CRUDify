@@ -307,6 +307,7 @@ const updateUser = async (userId) => {
                 localStorage.setItem('updated-users', JSON.stringify(updatedUsers));
                 displayUsers();
                 showToast('success', 'User information updated successfully.');
+                hideEditModal();
             })
             .catch(error => {
                 console.error('Error updating user:', error);
@@ -339,6 +340,7 @@ const updateUser = async (userId) => {
         localStorage.setItem('updated-users', JSON.stringify(localUsers));
         displayUsers();
         showToast('success', 'User information updated successfully.');
+        hideEditModal();
     }
 }
 
@@ -440,7 +442,7 @@ document.addEventListener('click', event => {
     if (target.classList.contains('delete')) {
         showDeleteModal();
     }
-    if (target.classList.contains('close') || target.id === 'cancelEdit' || target.id === 'saveChanges') {
+    if (target.classList.contains('close') || target.id === 'cancelEdit') {
         hideEditModal();
     }
     if (target.classList.contains('close') || target.id === 'cancelDelete' || target.id === 'confirmDelete') {
