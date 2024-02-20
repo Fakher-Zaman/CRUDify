@@ -227,23 +227,33 @@ const displayUsers = async () => {
 let userIdToUpdate;
 const editUser = async (userId) => {
     // console.log(userId);
-    const res = await fetch('https://dummyjson.com/users');
-    const data = await res.json();
+    let user;
 
-    const localUsers = JSON.parse(localStorage.getItem('users')) || [];
-    const updatedUsers = JSON.parse(localStorage.getItem('updated-users')) || [];
-    const mergedUsers = [...data.users, ...localUsers];
-    const indexToUpdate = mergedUsers.findIndex(user => user.id === userId);
+    if (userId >= 1 && userId <= 30) {
+        const res = await fetch(`https://dummyjson.com/users/${userId}`);
+        if (!res.ok) {
+            throw new Error(`Failed to fetch user data for ID ${userId}`);
+        }
+        const apiUser = await res.json();
 
-    // If the user is found in the mergedUsers array, update it with the corresponding updated user
-    if (indexToUpdate !== -1) {
+        const updatedUsers = JSON.parse(localStorage.getItem('updated-users')) || [];
         const updatedUser = updatedUsers.find(user => user.id === userId);
-        if (updatedUser) {
-            mergedUsers[indexToUpdate] = updatedUser;
+
+        user = updatedUser || apiUser;
+    } else {
+        // Fetch user data from local storage
+        const localUsers = JSON.parse(localStorage.getItem('users')) || [];
+        const updatedUsers = JSON.parse(localStorage.getItem('updated-users')) || [];
+        const mergedUsers = [...localUsers, ...updatedUsers]; // Merge local users and updated users
+
+        user = mergedUsers.find(user => user.id === userId);
+
+        if (!user) {
+            throw new Error(`User with ID ${userId} not found in local storage`);
         }
     }
-    const user = mergedUsers.find(user => user.id === userId);
 
+    // Update the form with user data
     document.getElementById('image').value = user.image;
     document.getElementById('firstName').value = user.firstName;
     document.getElementById('lastName').value = user.lastName;
@@ -255,7 +265,7 @@ const editUser = async (userId) => {
     document.getElementById('gender').value = user.gender;
 
     userIdToUpdate = userId;
-}
+};
 
 const updateUser = async (userId) => {
     // console.log("Update User Here");
@@ -351,22 +361,32 @@ document.getElementById('saveChanges').addEventListener('click', () => {
 let userIdToDelete;
 const deleteUser = async (userId) => {
     // console.log(userId);
-    const res = await fetch('https://dummyjson.com/users');
-    const data = await res.json();
+    let user;
 
-    const localUsers = JSON.parse(localStorage.getItem('users')) || [];
-    const updatedUsers = JSON.parse(localStorage.getItem('updated-users')) || [];
-    const mergedUsers = [...data.users, ...localUsers];
-    const indexToUpdate = mergedUsers.findIndex(user => user.id === userId);
+    if (userId >= 1 && userId <= 30) {
+        const res = await fetch(`https://dummyjson.com/users/${userId}`);
+        if (!res.ok) {
+            throw new Error(`Failed to fetch user data for ID ${userId}`);
+        }
+        const apiUser = await res.json();
 
-    // If the user is found in the mergedUsers array, update it with the corresponding updated user
-    if (indexToUpdate !== -1) {
+        const updatedUsers = JSON.parse(localStorage.getItem('updated-users')) || [];
         const updatedUser = updatedUsers.find(user => user.id === userId);
-        if (updatedUser) {
-            mergedUsers[indexToUpdate] = updatedUser;
+
+        user = updatedUser || apiUser;
+    } else {
+        // Fetch user data from local storage
+        const localUsers = JSON.parse(localStorage.getItem('users')) || [];
+        const updatedUsers = JSON.parse(localStorage.getItem('updated-users')) || [];
+        const mergedUsers = [...localUsers, ...updatedUsers]; // Merge local users and updated users
+
+        user = mergedUsers.find(user => user.id === userId);
+
+        if (!user) {
+            throw new Error(`User with ID ${userId} not found in local storage`);
         }
     }
-    const user = mergedUsers.find(user => user.id === userId);
+
     document.getElementById('user-name').innerHTML = user.firstName + " " + user.lastName;
 
     userIdToDelete = userId;
