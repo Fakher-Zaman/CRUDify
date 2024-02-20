@@ -26,6 +26,12 @@
     border-radius: 2px;
 }
 
+.contact-info p span,
+.part2-info p:last-child {
+    overflow-wrap: anywhere;
+    line-height: 1;
+}
+
 .get-users i {
     color: var(--primary-color-1);
 }
