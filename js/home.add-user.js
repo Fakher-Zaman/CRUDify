@@ -22,21 +22,11 @@ function showToast(type, message) {
     }, 3000);
 }
 
-function showLoader() {
-    document.getElementById('loaderContainer').style.display = 'block';
-    document.getElementById('add-section').style.display = 'none';
-}
-
-function hideLoader() {
-    document.getElementById('loaderContainer').style.display = 'none';
-    document.getElementById('add-section').style.display = 'block';
-}
-
 document.addEventListener('DOMContentLoaded', function () {
-    showLoader();
+    showLoader('add-section');
     setTimeout(function () {
         displayUsers();
-        hideLoader();
+        hideLoader('add-section');
     }, 1000);
 });
 

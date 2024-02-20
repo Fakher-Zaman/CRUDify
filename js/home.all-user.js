@@ -16,16 +16,6 @@ function showToast(type, message) {
     }, 3000);
 }
 
-function showLoader() {
-    document.getElementById('loaderContainer').style.display = 'block';
-    document.getElementById('all-user-section').style.display = 'none';
-}
-
-function hideLoader() {
-    document.getElementById('loaderContainer').style.display = 'none';
-    document.getElementById('all-user-section').style.display = 'block';
-}
-
 // Attach event listener to input field for 'input' event
 searchInput.addEventListener('input', function () {
     performSearch();
@@ -162,10 +152,10 @@ function displayLocalSearchResults(users) {
 }
 
 const getData = async () => {
-    showLoader();
+    showLoader('all-user-section');
     const res = await fetch('https://dummyjson.com/users');
     const data = await res.json();
-    hideLoader();
+    hideLoader('all-user-section');
 
     // Merged local users with fetched users
     const localUsers = JSON.parse(localStorage.getItem('users')) || [];

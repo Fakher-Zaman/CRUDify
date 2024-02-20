@@ -12,22 +12,12 @@ function showToast(type, message) {
     }, 3000);
 }
 
-function showLoader() {
-    document.getElementById('loaderContainer').style.display = 'block';
-    document.getElementById('task-section').style.display = 'none';
-}
-
-function hideLoader() {
-    document.getElementById('loaderContainer').style.display = 'none';
-    document.getElementById('task-section').style.display = 'block';
-}
-
 document.addEventListener('DOMContentLoaded', function () {
-    showLoader();
+    showLoader('task-section');
 
     setTimeout(function () {
         // displayUsers();
-        hideLoader();
+        hideLoader('task-section');
     }, 1000);
 });
 
