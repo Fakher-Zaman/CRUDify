@@ -13,3 +13,15 @@ function hideLoader(containerId) {
     document.getElementById('loaderContainer').style.display = 'none';
     document.getElementById(containerId).style.display = 'block';
 }
+
+function showToast(type, message) {
+    var toast = document.getElementById("toast");
+    toast.innerText = message;
+    toast.className = "toast " + type;
+    toast.classList.remove("hide");
+    toast.classList.add("show");
+    setTimeout(function () {
+        toast.classList.remove("show");
+        toast.classList.add("hide");
+    }, 3000);
+}

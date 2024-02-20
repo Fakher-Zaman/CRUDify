@@ -4,18 +4,6 @@ const updateUserButton = document.querySelector('#saveChanges');
 const searchButton = document.querySelector('.button');
 const searchInput = document.querySelector('input[type="text"]');
 
-function showToast(type, message) {
-    var toast = document.getElementById("toast");
-    toast.innerText = message;
-    toast.className = "toast " + type;
-    toast.classList.remove("hide");
-    toast.classList.add("show");
-    setTimeout(function () {
-        toast.classList.remove("show");
-        toast.classList.add("hide");
-    }, 3000);
-}
-
 // Attach event listener to input field for 'input' event
 searchInput.addEventListener('input', function () {
     performSearch();

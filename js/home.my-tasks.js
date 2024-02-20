@@ -1,17 +1,5 @@
 const userTodoItems = document.querySelector('.todo-list');
 
-function showToast(type, message) {
-    var toast = document.getElementById("toast");
-    toast.innerText = message;
-    toast.className = "toast " + type;
-    toast.classList.remove("hide");
-    toast.classList.add("show");
-    setTimeout(function () {
-        toast.classList.remove("show");
-        toast.classList.add("hide");
-    }, 3000);
-}
-
 document.addEventListener('DOMContentLoaded', function () {
     showLoader('task-section');
 
