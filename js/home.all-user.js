@@ -50,9 +50,13 @@ searchButton.addEventListener('click', function () {
     }
 });
 
+// Function to search locally
 function searchLocally(searchTerm) {
     const localUsers = JSON.parse(localStorage.getItem('users')) || [];
-    const filteredUsers = localUsers.filter(user => {
+    const updatedUsers = JSON.parse(localStorage.getItem('updated-users')) || [];
+    const mergedUsers = [...localUsers, ...updatedUsers];
+
+    const filteredUsers = mergedUsers.filter(user => {
         // Search by firstName, lastName, email, etc.
         return user.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
             user.lastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
