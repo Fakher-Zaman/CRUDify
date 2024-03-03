@@ -129,3 +129,22 @@ window.addEventListener("scroll", function () {
 
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
 }, false);
+
+// Check if token exists in local storage
+const token = localStorage.getItem('Token');
+
+// If token is null or empty, redirect to index.html (sign-in page)
+if (!token) {
+    window.location.href = "../index.html";
+} else {
+    // Fetch user data with token
+    fetch('https://dummyjson.com/user/me', {
+        method: 'GET',
+        headers: {
+            'Authorization': 'Bearer ' + token,
+        },
+    })
+        .then(res => res.json())
+        .then(console.log)
+        .catch(error => console.error('Error fetching user data:', error));
+}

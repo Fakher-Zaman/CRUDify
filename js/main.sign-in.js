@@ -47,6 +47,7 @@ function setData(event) {
             localStorage.setItem('userProfile', data.image);
             localStorage.setItem('userFirstName', data.firstName);
             localStorage.setItem('userLastName', data.lastName);
+            localStorage.setItem('Token', data.token);
             // console.log(data);
 
             showToast('success', 'Login successful. Welcome back, ' + data.username + '!');
