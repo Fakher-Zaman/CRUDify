@@ -21,8 +21,8 @@ CRUDify is a user-friendly interface implemented with HTML, CSS, and JavaScript,
 
 To use CRUDify, simply visit the [project site](https://crudify-pi.vercel.app/) and follow the on-screen instructions. You can log in using the following credentials:
 
-- **Username:** atuny0
-- **Password:** 9uQFF1Lh
+- **Username:** emilys
+- **Password:** emilyspass
 
 CRUDify provides a clean and responsive interface, making it easy to manage user data efficiently.
 
